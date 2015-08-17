@@ -63,13 +63,5 @@ class AuthController extends Controller
         ]);
     }
     
-    protected function getRegister(){
-        
-        
-    }
-    
-    protected function postRegister(){
 
-
-    }
 }

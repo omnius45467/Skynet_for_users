@@ -1,4 +1,4 @@
-@extends('index')
+@extends('backend')
 @section('content')
 
     {{--<!-- resources/views/auth/login.blade.php -->--}}
@@ -32,7 +32,7 @@
                     <div class="row quickly-animate  animated right-animate ">
                         <div class="col-sm-12 col-xs-12">
                             <h1>
-                                <span class="h-under">C</span>ONTACTS
+                                LOGI<span class="h-under">N</span>
                             </h1>
                         </div>
                     </div>
@@ -49,29 +49,11 @@
                                 Email: info@uno.pro <br/>
                             </div>
                             <div class="form-block col-sm-6 col-xs-12">
-                                <form role="form" class="contact-form" method="post">
+                                <div class="contact-form"></div>
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
                                     <div class="border-top"></div>
                                     <div class="border-bottom"></div>
                                     <div class="form-group name">
-                                        <input type="text" class="form-control" name="name" placeholder="Name">
-                                    </div>
-
-                                    <div class="form-group email">
-                                        <input type="email" class="form-control" name="email" placeholder="Your email">
-                                    </div>
-
-                                    <div class="form-group comment">
-                                        <textarea class="form-control" name="comment" placeholder="Message"></textarea>
-                                    </div>
-
-                                    <button type="submit" class="btn">
-                                        <span class="form-message" style="display: none;"></span>
-                                        Send
-                                    </button>
-
-                                </form>
-
-                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                     <div class="form-group">
@@ -91,11 +73,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-md-12">
+                                        <div class="text-center">
                                             <ul class="list-inline">
-                                                <li>
-                                                    <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-                                                </li>
+                                                {{--<li>--}}
+                                                    {{--<a class="btn" href="{{ url('/password/email') }}">Forgot Your Password?</a>--}}
+                                                {{--</li>--}}
 
                                                 <li>
                                                     <button type="submit" class="btn btn-primary">Login</button>
@@ -108,6 +90,30 @@
                                         </div>
                                     </div>
                                 </form>
+
+                                {{--<form role="form" class="contact-form" method="post">--}}
+                                    {{--<div class="border-top"></div>--}}
+                                    {{--<div class="border-bottom"></div>--}}
+                                    {{--<div class="form-group name">--}}
+                                        {{--<input type="text" class="form-control" name="name" placeholder="Name">--}}
+                                    {{--</div>--}}
+
+                                    {{--<div class="form-group email">--}}
+                                        {{--<input type="email" class="form-control" name="email" placeholder="Your email">--}}
+                                    {{--</div>--}}
+
+                                    {{--<div class="form-group comment">--}}
+                                        {{--<textarea class="form-control" name="comment" placeholder="Message"></textarea>--}}
+                                    {{--</div>--}}
+
+                                    {{--<button type="submit" class="btn">--}}
+                                        {{--<span class="form-message" style="display: none;"></span>--}}
+                                        {{--Send--}}
+                                    {{--</button>--}}
+
+                                {{--</form>--}}
+
+
                             </div>
                         </div>
                     </div>
