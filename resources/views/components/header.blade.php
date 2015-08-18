@@ -22,6 +22,9 @@
             <li data-menuanchor="page5">
                 <a href="/app">App</a>
             </li>
+            <li data-menuanchor="page6">
+                <a href="/login">Login</a>
+            </li>
         </ul>
     </div>
 </header>

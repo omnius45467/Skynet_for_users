@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Post;
 use Illuminate\Support\Facades\Auth;
 
 class WallController extends Controller
@@ -28,7 +29,8 @@ class WallController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('wall/index', compact('user'));
+        $posts = Post::all();
+        return view('wall/index', compact('user', 'posts'));
     }
 
     /**
@@ -38,7 +40,9 @@ class WallController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        $posts = Post::all();
+        return view('wall/create', compact('user', 'posts'));
     }
 
     /**

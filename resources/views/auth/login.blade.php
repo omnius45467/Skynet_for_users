@@ -42,11 +42,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="adress-block col-sm-6 col-xs-12">
-                                350 Fifth Avenue, 34th floor <br/>
-                                New York, NY 10118-3299 USA <br/>
-                                Tel: +1-212-290-4700 <br/>
-                                Fax: +1-212-736-1300 <br/>
-                                Email: info@uno.pro <br/>
+                               You are about to enter a world...
+                                <br>
+                                <br/>
+                                <p>*We seek to ensure the privacy of individual users.</p>
                             </div>
                             <div class="form-block col-sm-6 col-xs-12">
                                 <div class="contact-form"></div>
