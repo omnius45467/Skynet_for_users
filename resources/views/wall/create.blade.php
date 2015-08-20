@@ -8,6 +8,11 @@
                     <h2>Create Post</h2>
                     @if(Auth::user()->hasRole('admin'))
                         <div class="col-md-6-col-md-offset-3">
+                            {!! Form::open(array('url' => '/wall/create', 'method' => 'post')) !!}
+
+                                {!! Form::text('content'); !!}
+                                {!! Form::submit('Post This'); !!}
+                            {!! Form::close() !!}
 
                         </div>
 

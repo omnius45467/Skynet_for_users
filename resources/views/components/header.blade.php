@@ -17,12 +17,9 @@
                 <a href="/contacts">Contacts</a>
             </li>
             <li data-menuanchor="page4">
-                <a href="/portfolio">Portfolio</a>
-            </li>
-            <li data-menuanchor="page5">
                 <a href="/app">App</a>
             </li>
-            <li data-menuanchor="page6">
+            <li data-menuanchor="page5">
                 <a href="/login">Login</a>
             </li>
         </ul>

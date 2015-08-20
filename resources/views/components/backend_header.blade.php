@@ -23,12 +23,11 @@
                 <li data-menuanchor="page6">
                     <a href="/auth/logout">Logout</a>
                 </li>
-           
+            {{--@if()--}}
                 <li data-menuanchor="page5">
                     <a href="/auth/login">Login</a>
                 </li>
-
-
+            {{--@endif--}}
         </ul>
     </div>
 

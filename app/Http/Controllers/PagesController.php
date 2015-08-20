@@ -26,10 +26,10 @@ class PagesController extends Controller
     {
         return view('pages.contacts');
     }
-    public function portfolio()
-    {
-        return view('pages.portfolio');
-    }
+//    public function portfolio()
+//    {
+//        return view('pages.portfolio');
+//    }
     public function app()
     {
         return view('pages.app');

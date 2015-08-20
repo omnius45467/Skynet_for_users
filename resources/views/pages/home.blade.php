@@ -9,10 +9,9 @@
                             <h1 data-duration="500" class="animated right-animate">UN<span class="h-under">O</span>.
                             </h1>
 
-                            <h1 data-duration="1000" class="animated left-animate">MODERN &<br/>CREATIVE TEMPLATE</h1>
+                            <h1 data-duration="1000" class="animated left-animate">MODERN &<br/>CREATIVE ANALYSIS TOOLS</h1>
 
-                            <p data-duration="1000" class="animated left-animate">Our website is under construction.
-                                We'll be here soon with our new awesome site, subscribe to be notified.</p>
+                            <p data-duration="1000" class="animated left-animate">We offer a community for business owners and students to engage in practical study</p>
                         </div>
                     </div>
 

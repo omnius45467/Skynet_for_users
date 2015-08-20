@@ -146,6 +146,11 @@ return [
 
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        /*
+        *Custom Providers
+         * */
+        App\Providers\LogServiceProvider::class,
+        App\Providers\DatabaseServiceProvider::class,
 
     ],
 

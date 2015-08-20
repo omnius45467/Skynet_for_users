@@ -7,16 +7,38 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\User;
+use App\Tracker;
+use App\Skynet\Tracker\TrackerFunctions;
+use App\Skynet\Facades\Logger;
+use App\Skynet\Repositories\Contracts\UserRepository;
+
+
 class TrackerController extends Controller
 {
+
+    private $users;
+
+    /**
+     * @param UserRepository $users
+     */
+    public function __construct(UserRepository $users)
+    {
+        $this->users = $users;
+
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
     public function index()
-    {
-        return view('tracker.index');
+    {   
+        $users = User::all();
+        $datas = Tracker::all();
+        TrackerFunctions::log("this user has accessed the activity monitor");
+        return view('tracker.index', compact('users', 'datas'));
     }
 
     /**
@@ -48,7 +70,9 @@ class TrackerController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $data = Tracker::find($id);
+        return view('tracker.show', compact('user', 'data'));
     }
 
     /**

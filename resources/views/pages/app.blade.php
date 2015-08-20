@@ -16,11 +16,16 @@
                             <div class="col-md-6 col-sm-8 col-xs-12 app-text">
                                 <div>
                                     <p>
-                                        An awesome mobile APP for your smartphone. Our designers and developers made a
-                                        piece of art for you to enjoy your phone functioning. Portability, connectivity,
-                                        user interface, storage, performance, security and app capability – all these
-                                        will make your daily life much easier and more effective. Just have a look!
+                                        Our APP is tested for the best user experience. We make it easy to measure your 
+                                        social out reach for your business or personal community. All you need is a browser 
+                                        or a smartphone to get started!
                                     </p>
+                                    {{--<p>--}}
+                                        {{--An awesome mobile APP for your smartphone. Our designers and developers made a--}}
+                                        {{--piece of art for you to enjoy your phone functioning. Portability, connectivity,--}}
+                                        {{--user interface, storage, performance, security and app capability – all these--}}
+                                        {{--will make your daily life much easier and more effective. Just have a look!--}}
+                                    {{--</p>--}}
 
                                     <div class="block-btn">
                                         <a class="appstore-btn" href="#">

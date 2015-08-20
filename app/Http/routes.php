@@ -12,39 +12,43 @@
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/home', 'PagesController@index');
+
 Route::get('/about', 'PagesController@about');
 Route::get('/contacts', 'PagesController@contacts');
 Route::get('/app', 'PagesController@app');
-Route::get('/portfolio', 'PagesController@portfolio');
+//Route::get('/portfolio', 'PagesController@portfolio');
 
-Route::filter('admin', function()
-{
-    // check the current user
-    if (!Entrust::hasRole('admin')) {
-        return redirect('/login');
-    }
-});
+//Route::filter('admin', function()
+//{
+//    // check the current user
+//    if (!Entrust::hasRole('admin')) {
+//        return redirect('/login');
+//    }
+//});
 
 // only owners will have access to routes within admin/advanced
-Route::when('/dashboard', 'admin');
-Route::when('/tracker', 'admin');
-Route::when('/reports', 'admin');
-Route::when('/wall', 'admin');
+//Route::when('/dashboard', 'admin');
+//Route::when('/tracker', 'admin');
+//Route::when('/reports', 'admin');
+//Route::when('/wall', 'admin');
 
-Route::when('/wall/create', 'admin');
 
 //
 Route::get('/dashboard', 'DashboardController@index');
+Route::get('/home', 'DashboardController@index');
+
 Route::get('/tracker', 'TrackerController@index');
+Route::get('/tracker/{id}', 'TrackerController@show');
+
 Route::get('/reports', 'ReportController@index');
 
-Route::get('/profile/{id}', 'ProfileController@show');
+Route::get('/profile', 'ProfileController@index');
 Route::get('/profile/create', 'ProfileController@create');
 Route::get('/profile/{id}/edit', 'ProfileController@edit');
 
 Route::get('/wall', 'WallController@index');
 Route::get('/wall/create', 'WallController@create');
+Route::post('/wall/store', 'WallController@store');
 
 
 // Authentication routes...

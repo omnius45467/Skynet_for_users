@@ -42,7 +42,7 @@
 @include('components/loader')
 @include('components/backend_header')
 
-<div class="general-block pagepiling">
+<div class="content general-block pagepiling">
     @yield('content')
 
 </div><!-- general-block -->

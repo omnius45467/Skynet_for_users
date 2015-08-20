@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CreatePostRequest;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Post;
@@ -17,10 +18,10 @@ class WallController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +31,7 @@ class WallController extends Controller
     {
         $user = Auth::user();
         $posts = Post::all();
-        return view('wall/index', compact('user', 'posts'));
+        return view('wall.index', compact('user', 'posts'));
     }
 
     /**
@@ -38,11 +39,16 @@ class WallController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $user = Auth::user();
-        $posts = Post::all();
-        return view('wall/create', compact('user', 'posts'));
+
+            $user = Auth::user();
+            $posts = Post::all();
+            
+            $data = $request->all();
+        
+        return view('wall.create', compact('user', 'posts', 'data'));
+
     }
 
     /**
@@ -53,7 +59,12 @@ class WallController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        $posts = Post::all();
+
+//        $data = $request->all();
+
+        return view('wall.index', compact('user', 'posts', 'data'));
     }
 
     /**
