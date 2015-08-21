@@ -8,16 +8,21 @@
                     <div class="col-md-12">
                         <div class="col-md-3">
 
-                                <a class="btn" href="/tracker/{{$user->id}}">{{$user->name}}</a>
+                            <a class="btn" href="/tracker/{{$user->id}}">{{$user->name}}</a>
 
                         </div>
                         <div class="col-md-9">
-
+                            @if($data != '')
                                 {{$data->id}}
                                 <br/>
                                 {{$data->machine}}
                                 <br/>
-
+                                {{$data->ip}}
+                                <br/>
+                                {{$data->event}}
+                            @else
+                                <p>No Data On This User</p>
+                            @endif
                         </div>
                     </div>
 

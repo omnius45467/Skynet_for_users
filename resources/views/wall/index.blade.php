@@ -7,15 +7,15 @@
                 <div class="content">
                     <h2>Wall</h2>
                     @if(Auth::user()->hasRole('admin'))
-                        <div class="col-md-6-col-md-offset-3">
+                        <div id="wall" class="col-md-6-col-md-offset-3" >
                             @foreach($posts as $post)
                                 <div class="block-blockquotes">
                                     <span class="quotes">
                                     
-                                    <blockquote>
+                                        ID: {{$post->id}}
+                                        <br/>
                                         {{$post->content}}
-                                    </blockquote>
-                                    <span>
+
                                         {{$post->user_id}}
                                     </span>
                                     </span>

@@ -42,35 +42,40 @@ class WallController extends Controller
     public function create(Request $request)
     {
 
-            $user = Auth::user();
-            $posts = Post::all();
-            
-            $data = $request->all();
-        
-        return view('wall.create', compact('user', 'posts', 'data'));
+        $user = Auth::user()->id;
+
+//        $data = $request->all();
+
+
+        return view('wall.create', compact('user', 'data'));
 
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  Request $request
      * @return Response
      */
     public function store(Request $request)
     {
         $user = Auth::user();
         $posts = Post::all();
+        $data = $request->all();
+//        dd($data['content']);
+        Post::create([
+            'content' => $data['content'],
+            'user_id' => $user->id,
+        ]);
 
-//        $data = $request->all();
 
-        return view('wall.index', compact('user', 'posts', 'data'));
+        return view('wall.index', compact('user', 'posts','data'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
@@ -81,7 +86,7 @@ class WallController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
@@ -92,8 +97,8 @@ class WallController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
+     * @param  Request $request
+     * @param  int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -104,7 +109,7 @@ class WallController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)

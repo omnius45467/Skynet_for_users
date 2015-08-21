@@ -11,9 +11,11 @@
                 <li data-menuanchor="page1" class="active">
                     <a href="/dashboard">Dashboard</a>
                 </li>
+            {{--@if(Auth::user()->hasRole('admin'))--}}
                 <li data-menuanchor="page2">
                     <a href="/tracker">Tracker</a>
                 </li>
+            {{--@endif--}}
                 <li data-menuanchor="page3">
                     <a href="/reports">Reports</a>
                 </li>

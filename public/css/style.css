@@ -2372,3 +2372,7 @@ hr {
   margin-top:50px;
   
 }
+#wall{
+  overflow-y: auto;
+  
+}

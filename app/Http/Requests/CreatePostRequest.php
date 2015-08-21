@@ -23,6 +23,7 @@ class CreatePostRequest extends Request {
     {
         return [
             'content' => 'required',
+            'user_id' => 'required',
 
         ];
     }

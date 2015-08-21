@@ -20,9 +20,6 @@ class Tracker extends Migration
             $table->string('event');
             $table->string('machine');
             $table->string('version');
-            $table->string('account_status');
-            $table->string('role');
-            $table->string('permission');
             $table->timestamps();
         });
     }

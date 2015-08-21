@@ -47,8 +47,10 @@ Route::get('/profile/create', 'ProfileController@create');
 Route::get('/profile/{id}/edit', 'ProfileController@edit');
 
 Route::get('/wall', 'WallController@index');
-Route::get('/wall/create', 'WallController@create');
-Route::post('/wall/store', 'WallController@store');
+//Route::get('/wall/create', 'WallController@create');
+//Route::post('/wall/store', 'WallController@store');
+
+Route::resource('/wall', 'WallController');
 
 
 // Authentication routes...

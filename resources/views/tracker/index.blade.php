@@ -17,6 +17,7 @@
                                 <br/>
                                 {{$data->machine}}
                                 <br/>
+
                                 
                             @endforeach
                         </div>

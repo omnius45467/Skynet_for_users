@@ -20,7 +20,8 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('profiles.default', compact('user'));
+        $posts = Auth::post();
+        return view('profiles.default', compact('user', 'posts'));
     }
 
     /**
