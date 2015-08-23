@@ -52,7 +52,7 @@
  * @copyright   2005 Michal Migurski
  * @version     CVS: $Id: JSON.php,v 1.31 2006/06/28 05:54:17 migurski Exp $
  * @license     http://www.opensource.org/licenses/bsd-license.php
- * @link        http://pear.php.net/pepr/pepr-proposal-show.php?id=198
+ * @link        http://pear.php.net/pepr/pepr-proposal-show.blade.php?id=198
  */
 
 /**

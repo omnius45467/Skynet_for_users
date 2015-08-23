@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\CreatePostRequest;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Post;
+use App\Tracker;
+use App\Skynet\Tracker\TrackerFunctions;
+use App\Skynet\Facades\Logger;
 use Illuminate\Support\Facades\Auth;
 
 class WallController extends Controller
@@ -31,6 +35,10 @@ class WallController extends Controller
     {
         $user = Auth::user();
         $posts = Post::all();
+
+        TrackerFunctions::log("This is viewing the wall ");
+        
+        
         return view('wall.index', compact('user', 'posts'));
     }
 
@@ -42,12 +50,13 @@ class WallController extends Controller
     public function create(Request $request)
     {
 
-        $user = Auth::user()->id;
+        $user = Auth::user();
+        $user_id = Auth::user()->id;
 
 //        $data = $request->all();
+        TrackerFunctions::log("This user is building a post");
 
-
-        return view('wall.create', compact('user', 'data'));
+        return view('wall.create', compact('user_id', 'data'));
 
     }
 
@@ -62,7 +71,7 @@ class WallController extends Controller
         $user = Auth::user();
         $posts = Post::all();
         $data = $request->all();
-//        dd($data['content']);
+
         Post::create([
             'content' => $data['content'],
             'user_id' => $user->id,
@@ -80,7 +89,11 @@ class WallController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Auth::user();
+        $post = Post::find($id);
+        TrackerFunctions::log("this user is viewing a single post " . $user->name . " ");
+        
+        return view('wall.show', compact('user', 'post'));
     }
 
     /**

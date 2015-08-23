@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>tracker</h2>
-                @if(Auth::user()->hasRole('admin'))
+                @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('nonadmin') || Auth::user()->hasRole('customer') )
                     <div class="col-md-12">
                         <div class="col-md-3">
 
@@ -13,7 +13,7 @@
                         </div>
                         <div class="col-md-9">
                             @if($data != '')
-                                {{$data->id}}
+
                                 <br/>
                                 {{$data->machine}}
                                 <br/>
@@ -26,8 +26,6 @@
                         </div>
                     </div>
 
-                @elseif(Auth::user()->hasRole('nonadmin'))
-                    <h1>You are a non admin</h1>
                 @else
                     <h1>You are not signed in</h1>
                 @endif

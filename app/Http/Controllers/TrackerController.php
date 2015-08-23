@@ -9,8 +9,10 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use App\Tracker;
+
 use App\Skynet\Tracker\TrackerFunctions;
 use App\Skynet\Facades\Logger;
+use Illuminate\Support\Facades\Auth;
 use App\Skynet\Repositories\Contracts\UserRepository;
 
 
@@ -36,9 +38,10 @@ class TrackerController extends Controller
     public function index()
     {   
         $users = User::all();
+        $user = Auth::user();
         $datas = Tracker::all();
-        TrackerFunctions::log("this user has accessed the activity monitor");
-        return view('tracker.index', compact('users', 'datas'));
+        TrackerFunctions::log("This user has accessed the tracking monitor");
+        return view('tracker.index', compact('users', 'user','datas'));
     }
 
     /**
@@ -72,6 +75,14 @@ class TrackerController extends Controller
     {
         $user = User::find($id);
         $data = Tracker::find($id);
+        if($user == $data){
+            TrackerFunctions::log( $user->name . ' is viewing their own tracking profile');
+            
+        }else{
+            TrackerFunctions::log("this user is viewing a single user " . $user->name . $user->id);
+            
+        }
+
         return view('tracker.show', compact('user', 'data'));
     }
 

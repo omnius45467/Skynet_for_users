@@ -1404,7 +1404,7 @@ header ul li a:active {
   bottom: 0;
   display: block;
   height: 100%;
-  overflow: hidden;
+  overflow: auto !important;
   position: relative;
   touch-action: none;
   width: 100%;
@@ -2370,9 +2370,15 @@ hr {
 }
 .content{
   margin-top:50px;
+  margin-bottom:50px;
+  overflow-y: scroll;
   
 }
 #wall{
-  overflow-y: auto;
+  overflow-y: scroll;
+  
+}
+input{
+  color:#333;
   
 }

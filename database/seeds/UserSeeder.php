@@ -24,6 +24,8 @@ class UserSeeder extends Seeder
 
         $admin = Role::create(['name' => 'admin', 'display_name' => 'Admin']);
         $nonadmin = Role::create(['name' => 'nonadmin', 'display_name' => 'Non Admin']);
+        $customer = Role::create(['name' => 'customer', 'display_name' => 'Customer']);
+
         
         $adminUser = [
             'name' => 'THX-1138',
@@ -45,13 +47,15 @@ class UserSeeder extends Seeder
         $faker = Faker::create();
 
         for ($i = 0; $i < 10; $i++) {
-            User::create([
+            $customerUser = User::create([
                 'name' => $faker->firstName,
                 'email' => $faker->email,
                 'password' => Hash::make('123456')
 
             ]);
 
+            $customerUser->attachRole($customer);
+            
         }
 
 

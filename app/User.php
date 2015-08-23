@@ -40,4 +40,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasOne('App\Profile', 'created_by');
     }
 
+    public function posts()
+    {
+        return $this->hasMany('App\Post', 'user_id');
+    }
+
 }

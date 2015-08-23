@@ -5,22 +5,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="content">
-                    <h2>Create Post</h2>
-                    @if(Auth::user()->hasRole('admin'))
+
+                    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('nonadmin') || Auth::user()->hasRole('customer'))
+                        <h2>Create Post</h2>
                         <div class="col-md-6-col-md-offset-3">
                             {!! Form::model(new App\Post, ['route' => ['wall.store']]) !!}
-                                {!! Form::text('content'); !!}
-                                {!! Form::submit('Post This'); !!}
+                            {!! Form::text('content'); !!}
+                            <br/>
+                            {!! Form::submit('Post This'); !!}
                             {!! Form::close() !!}
 
                         </div>
-
-                    @elseif(Auth::user()->hasRole('nonadmin'))
-                        <div class="col-md-6-col-md-offset-3">
-                            blah
-                        </div>
                     @else
-                        <h1>You are not signed in</h1>
+                        <h2>You are not signed in</h2>
+                        <a href="/login">Login</a>
                     @endif
                 </div>
 

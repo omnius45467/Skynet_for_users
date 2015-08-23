@@ -43,6 +43,7 @@ Route::get('/tracker/{id}', 'TrackerController@show');
 Route::get('/reports', 'ReportController@index');
 
 Route::get('/profile', 'ProfileController@index');
+Route::get('/profile/{id}', 'ProfileController@show');
 Route::get('/profile/create', 'ProfileController@create');
 Route::get('/profile/{id}/edit', 'ProfileController@edit');
 
