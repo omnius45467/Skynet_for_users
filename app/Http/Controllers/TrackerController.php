@@ -40,6 +40,7 @@ class TrackerController extends Controller
         $users = User::all();
         $user = Auth::user();
         $datas = Tracker::all();
+
         TrackerFunctions::log("This user has accessed the tracking monitor");
         return view('tracker.index', compact('users', 'user','datas'));
     }

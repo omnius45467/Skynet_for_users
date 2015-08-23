@@ -19,6 +19,8 @@
                                 <br/>
                                 {{$data->machine}}
                                 <br/>
+                                {{date("F j, Y, g:i a", strtotime($data->created_at))}}
+                                <br/>
 
                             @endforeach
                         </div>
