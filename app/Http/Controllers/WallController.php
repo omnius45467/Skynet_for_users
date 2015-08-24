@@ -104,7 +104,11 @@ class WallController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        $post = Post::find($id);
+        TrackerFunctions::log( $user->name . " is editing a post" . $post->id . " " );
+        
+        return view("wall.edit", compact("user", "post"));
     }
 
     /**
@@ -116,7 +120,10 @@ class WallController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->update($request->except(['_method', '_token']));
+
+        return redirect()->route('wall.index');
     }
 
     /**

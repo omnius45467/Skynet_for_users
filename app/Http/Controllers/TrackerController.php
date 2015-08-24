@@ -77,7 +77,7 @@ class TrackerController extends Controller
         $user = User::find($id);
         $data = Tracker::find($id);
         if($user == $data){
-            TrackerFunctions::log( $user->name . ' is viewing their own tracking profile');
+            TrackerFunctions::log('This user is viewing their own tracking profile');
             
         }else{
             TrackerFunctions::log("this user is viewing a single user " . $user->name . $user->id);
